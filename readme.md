@@ -1,7 +1,9 @@
 
 # Ark Documentation Theme
 
-A simple page-focused theme suitable for writing project documentation.
+I use this simple [Ark][] theme for generating project documentation.
+
+[ark]: http://mulholland.xyz/docs/ark/
 
 
 ## Includes
@@ -9,6 +11,7 @@ A simple page-focused theme suitable for writing project documentation.
 This theme supports the following include files:
 
 * `menu`
+* `footer`
 
 
 ## License

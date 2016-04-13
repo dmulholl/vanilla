@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>{{ record.meta_title || record.title || record.html|firsth|striptags }}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="@root/css/theme.css">
-	<link rel="stylesheet" href="@root/css/pygments.css">
-	<!--[if lt IE 9]><script src="@root/js/html5shiv.min.js"></script><![endif]-->
-	<script src="@root/js/jquery-1.11.2.min.js"></script>
-	<script src="@root/js/theme.js"></script>
+    <meta charset="utf-8">
+    <title>
+        {{ record.meta_title || record.title || record.html|firsth|striptags }}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="@root/css/theme.css">
+    <link rel="stylesheet" href="@root/css/pygments.css">
+    <!--[if lt IE 9]>
+        <script src="@root/js/html5shiv.min.js"></script>
+    <![endif]-->
+    <script src="@root/js/jquery-1.12.3.min.js"></script>
+    <script src="@root/js/theme.js"></script>
 </head>
 
-<body class="{{{classes}}}">
+<body class="{{{ classes }}}">
 
-	<header id="header" class="header meta">
-		{% if inc.menu %}
-			<div class="hamburger unselectable">☰</div>
-			{{ inc.menu }}
-		{% endif %}
-	</header>
+    <header id="head" class="head">
+        <input id="togglebox" type="checkbox">
+        <label id="togglelabel" for="togglebox" class="unselectable"></label>
+        {{ inc.menu }}
+    </header>
 
-	<article id="content" class="content">
-		{% if record.title %}
-			<h1>{{ record.title }}</h1>
-		{% endif %}
+    <article id="main" class="main">
+        {% if record.title %}
+            <h1>{{ record.title }}</h1>
+        {% endif %}
 
-		{{ record.html }}
+        {{ record.html }}
+    </article>
 
-		{% if record.tags %}
-			<hr>
-			<p>Tagged: &nbsp;{{ record.tags|join:',&nbsp;&nbsp;' }}</p>
-		{% endif %}
-	</article>
-
-	<footer id="footer" class="footer meta">
-		{{ inc.menu }}
-	</footer>
+    <footer id="foot" class="foot">
+        {{ inc.footer || inc.menu }}
+    </footer>
 
 </body>
 </html>

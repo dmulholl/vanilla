@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ node.meta_title || node.title || site.title }}</title>
+    <link rel="stylesheet" href="@root/css/vanilla.css">
+    <link rel="stylesheet" href="@root/css/pygments.css">
+    <script src="@root/js/jquery-1.12.3.min.js"></script>
+    <script src="@root/js/vanilla.js"></script>
+</head>
+<body class="{$ classes|join(' ') $}">
+    <header id="head" class="head">
+        <input id="menu-check" type="checkbox"/>
+        <label id="menu-label" for="menu-check" class="unselectable">
+            <span class="icon close-icon">✕</span>
+            <span class="icon open-icon">☰</span>
+            <span class="text">Menu</span>
+        </label>
+        {{ inc.menu }}
+    </header>
+
+    <article id="main" class="main">
+        {% if node.title %}
+            <h1>{{ node.title }}</h1>
+        {% endif %}
+        {{ node.html }}
+    </article>
+
+    <footer id="foot" class="foot">
+        {{ inc.footer || inc.menu }}
+    </footer>
+</body>
+</html>

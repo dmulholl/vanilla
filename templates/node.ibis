@@ -6,29 +6,44 @@
     <title>{{ node.meta_title || node.title || site.title }}</title>
     <link rel="stylesheet" href="@root/css/vanilla.css">
     <link rel="stylesheet" href="@root/css/pygments.css">
-    <script src="@root/js/jquery-1.12.3.min.js"></script>
-    <script src="@root/js/vanilla.js"></script>
 </head>
 <body class="{$ classes|join(' ') $}">
-    <header id="head" class="head">
-        <input id="menu-check" type="checkbox"/>
-        <label id="menu-label" for="menu-check" class="unselectable">
-            <span class="icon close-icon">✕</span>
-            <span class="icon open-icon">☰</span>
-            <span class="text">Menu</span>
-        </label>
-        {{ inc.menu }}
+    <header id="masthead" class="masthead">
+        <div>
+            <h1 id="site-title">
+                <a href="@root/">{{ site.title || "Site Title" }}</a>
+            </h1>
+            {% if site.tagline %}
+                <p id="site-tagline">{{ site.tagline }}</p>
+            {% endif %}
+            <button id="menu-button">Menu</button>
+        </div>
+        <nav id="menu" class="menu">
+            {{ inc.menu }}
+        </nav>
     </header>
 
-    <article id="main" class="main">
-        {% if node.title %}
-            <h1>{{ node.title }}</h1>
-        {% endif %}
-        {{ node.html }}
-    </article>
+    <div id="wrapper" class="wrapper">
+        <article id="main" class="main">
+            {% if node.title %}
+                <h1>{{ node.title }}</h1>
+            {% endif %}
+            {{ node.html }}
+        </article>
 
-    <footer id="foot" class="foot">
-        {{ inc.footer || inc.menu }}
-    </footer>
+        <footer id="footer" class="footer">
+            {{ inc.footer || inc.menu }}
+        </footer>
+    </div>
+
+    <script>
+        var button = document.getElementById("menu-button");
+        var menu = document.getElementById("menu");
+
+        button.addEventListener("click", function() {
+            button.classList.toggle("active");
+            menu.classList.toggle("active");
+        });
+    </script>
 </body>
 </html>

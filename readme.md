@@ -3,12 +3,16 @@
 [1]: https://github.com/dmulholl/ivy
 [2]: http://www.dmulholl.com/demos/vanilla/
 
-
 A simple, single-column theme for [Ivy][1].
 
 * [Demo][2]
 
-This theme supports the following includes:
+This theme will display the following attributes from the site's `config.py` file in the site header:
+
+* `title`
+* `tagline`
+
+It supports the following includes:
 
 * `menu`
 

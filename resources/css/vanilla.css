@@ -217,6 +217,12 @@ a:hover {
     height: 70px;
 }
 
+.masthead-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+}
+
 #site-title {
     margin: 0;
     padding: 0;
@@ -306,7 +312,7 @@ a:hover {
     Main Content
 */
 
-.wrapper {
+.main-wrapper {
     padding: 60px 60px 0;
 }
 
@@ -517,7 +523,7 @@ sup.footnote {
         height: auto;
     }
 
-    .masthead div {
+    .site-title-wrapper {
         border-bottom: 1px solid #ccc;
         position: relative;
         padding: 30px 60px;
@@ -638,7 +644,7 @@ sup.footnote {
         color: #999;
     }
 
-    .wrapper {
+    .main-wrapper {
         padding: 50px 60px 0;
     }
 
@@ -659,12 +665,11 @@ sup.footnote {
 }
 
 @media screen and (max-width: 580px) {
-
-    .wrapper {
+    .main-wrapper {
         padding: 50px 30px 0;
     }
 
-    .masthead div {
+    .site-title-wrapper {
         padding: 30px 30px;
     }
 

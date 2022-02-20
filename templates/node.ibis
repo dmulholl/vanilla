@@ -8,30 +8,32 @@
     <link rel="stylesheet" href="@root/css/pygments.css">
 </head>
 <body class="{$ classes|join(' ') $}">
-    <header id="masthead" class="masthead">
-        <div>
-            <h1 id="site-title">
-                <a href="@root/">{{ site.title || "Site Title" }}</a>
-            </h1>
-            {% if site.tagline %}
-                <p id="site-tagline">{{ site.tagline }}</p>
-            {% endif %}
-            <button id="menu-button">Menu</button>
+    <header class="masthead">
+        <div class="masthead-wrapper">
+            <div class="site-title-wrapper">
+                <h1 id="site-title">
+                    <a href="@root/">{{ site.title || "Site Title" }}</a>
+                </h1>
+                {% if site.tagline %}
+                    <p id="site-tagline">{{ site.tagline }}</p>
+                {% endif %}
+                <button id="menu-button">Menu</button>
+            </div>
+            <nav id="menu" class="menu">
+                {{ inc.menu }}
+            </nav>
         </div>
-        <nav id="menu" class="menu">
-            {{ inc.menu }}
-        </nav>
     </header>
 
-    <div id="wrapper" class="wrapper">
-        <article id="main" class="main">
+    <div class="main-wrapper">
+        <article class="main">
             {% if node.title %}
                 <h1>{{ node.title }}</h1>
             {% endif %}
             {{ node.html }}
         </article>
 
-        <footer id="footer" class="footer">
+        <footer class="footer">
             {{ inc.footer || inc.menu }}
         </footer>
     </div>

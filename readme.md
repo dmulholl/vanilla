@@ -1,9 +1,9 @@
 # Vanilla
 
-[1]: https://github.com/dmulholl/ivy
+[1]: https://github.com/dmulholl/ark
 [2]: http://www.dmulholl.com/demos/vanilla/
 
-A simple, single-column theme for [Ivy][1].
+A simple, single-column theme for [Ark][1].
 
 * [Demo][2]
 

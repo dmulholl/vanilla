@@ -220,7 +220,7 @@ a:hover {
 .masthead-wrapper {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1000px;
+    max-width: 900px;
 }
 
 #site-title {
@@ -230,9 +230,8 @@ a:hover {
     border-bottom: none;
     float: left;
     font-weight: normal;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
+    font-size: 16px;
+    letter-spacing: 2px;
 }
 
 #site-title a {
@@ -256,7 +255,6 @@ a:hover {
     float: right;
     line-height: 70px;
     color: #bbb;
-    font-variant: small-caps;
     letter-spacing: 1px;
     font-size: 14px;
 }
@@ -343,7 +341,7 @@ a:hover {
     padding: 30px 80px;
     font-size: 14px;
     color: #888;
-    font-variant: small-caps;
+    /* font-variant: small-caps; */
     letter-spacing: 1px;
 }
 
